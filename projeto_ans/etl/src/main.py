@@ -89,6 +89,18 @@ def main():
     output_dir = Path(OUTPUT_DIR)
     output_dir.mkdir(parents=True, exist_ok=True)
 
+    # CONSOLIDADO 
+    consolidado_path = output_dir / "despesas_consolidadas.csv"
+
+    df_enriquecido.to_csv(
+    consolidado_path,
+    index=False,
+    sep=";",
+    encoding="utf-8-sig",
+    )
+
+    print(f"\n📄 CSV consolidado salvo em: {consolidado_path}")
+
     saida = output_dir / "despesas_agregadas.csv"
     df_final.to_csv(saida, index=False, sep=";", encoding="utf-8-sig")
 
