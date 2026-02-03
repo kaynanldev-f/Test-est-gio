@@ -1,6 +1,7 @@
 import os
 from dotenv import load_dotenv
-from mysql.connector import pooling
+import mysql.connector
+
 
 load_dotenv()
 

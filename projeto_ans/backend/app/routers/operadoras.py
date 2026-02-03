@@ -1,10 +1,10 @@
 from fastapi import APIRouter, Query, HTTPException
 from app.database import get_connection
 
-router = APIRouter(prefix="/api/operadoras", tags=["Operadoras"])
+router = APIRouter(tags=["Operadoras"])
 
 
-@router.get("")
+@router.get("/")
 def listar_operadoras(page: int = 1, limit: int = 10):
     offset = (page - 1) * limit
 
