@@ -17,7 +17,7 @@ export function useOperadoras() {
     error.value = null;
 
     try {
-      const response = await api.get("/api/operadoras/", {
+      const response = await api.get("api/operadoras/", {
         params: { page, limit: pagination.limit },
       });
 
